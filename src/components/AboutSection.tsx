@@ -2,27 +2,27 @@ import { motion } from "framer-motion";
 import { CheckCircle, Users, Award, Clock } from "lucide-react";
 
 const stats = [
-  { icon: Users, value: "500+", label: "Happy Clients" },
-  { icon: Award, value: "15+", label: "Years Experience" },
-  { icon: CheckCircle, value: "1000+", label: "Projects Delivered" },
-  { icon: Clock, value: "24/7", label: "Support Available" },
+  { icon: Users, value: "10k+", label: "Active Downloads" },
+  { icon: Award, value: "4.9", label: "User Rating" },
+  { icon: CheckCircle, value: "3+", label: "Major Platforms" },
+  { icon: Clock, value: "24/7", label: "AI Availability" },
 ];
 
 const features = [
   {
-    title: "Expert Guidance and Proven Results",
+    title: "User-Centric Design",
     description:
-      "Get expert advice and best practices to succeed at every step. We have a strong history of successful IT implementations.",
+      "We prioritize intuitive interfaces and seamless experiences. Our software is designed to be powerful yet accessible to everyone.",
   },
   {
-    title: "Cost-Effective and Tailored Solutions",
+    title: "Cutting-Edge AI Integration",
     description:
-      "Our customized approach saves time and reduces costs, seamlessly integrating technology solutions to fit your business needs.",
+      "Leveraging the latest in Large Language Models (LLMs) like LLaMA 3.3 to provide intelligent, context-aware assistance directly on your desktop.",
   },
   {
-    title: "Constant Improvement Driven by Industry Expertise",
+    title: "Privacy & Performance",
     description:
-      "We stay ahead of technology trends to provide innovative solutions that give your business a competitive edge.",
+      "We build native applications that are blazing fast and respect your privacy, ensuring secure authentication and local-first thinking.",
   },
 ];
 
@@ -60,15 +60,14 @@ export function AboutSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Expert solutions. Reliable support.
+              Crafting tools for the
               <br />
-              Proven results.
+              modern digital age.
             </h2>
             <p className="text-muted-foreground mb-8">
-              We're committed to driving your business success through tailored
-              technology solutions that streamline operations, boost efficiency,
-              and support growth. Our expert team ensures every implementation
-              is aligned with your unique goals and challenges.
+              At SaumAbhi Info Tech, we believe software should be an extension of your thought process.
+              We are dedicated to building robust, cross-platform applications that solve real-world problems.
+              Our flagship product, <strong>Navi</strong>, redefines how you interact with AI on your computer.
             </p>
           </motion.div>
 

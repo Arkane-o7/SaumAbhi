@@ -1,13 +1,13 @@
 import { useRef, useMemo } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Points, PointMaterial, OrbitControls } from '@react-three/drei';
+import { Points, PointMaterial, OrbitControls, Float } from '@react-three/drei';
 import * as THREE from 'three';
-
 
 export function HeroGlobe() {
     return (
-        <div className="w-full h-full relative cursor-move">
-            <Canvas camera={{ position: [0, 0, 3.2], fov: 50 }}>
+        <div className="w-full h-[800px] relative cursor-move">
+            {/* Moved camera closer to 3.8 to make globe big again, relying on wide container for clipping safety */}
+            <Canvas camera={{ position: [0, 0, 3.8], fov: 60 }}>
                 <ambientLight intensity={0.5} />
                 <GlobeParticles />
                 <Satellites />
@@ -20,10 +20,14 @@ export function HeroGlobe() {
 function GlobeParticles(props: any) {
     const ref = useRef<THREE.Points>(null);
 
-    // Generate points on a sphere
+    // Increased radius to 1.8 for maximum impact
     const sphere = useMemo(() => {
-        return generateSpherePoints(5000, 1.2);
+        return generateSpherePoints(5000, 1.8);
     }, []);
+
+    // useFrame((state, delta) => {
+    // Rotation handled by OrbitControls autoRotate for smoother interaction
+    // });
 
     return (
         <group rotation={[0, 0, Math.PI / 4]}>
@@ -42,39 +46,47 @@ function GlobeParticles(props: any) {
 }
 
 function Satellites() {
-    return (
-        <group>
-            <Satellite radius={1.4} speed={0.8} color="#3b82f6" size={0.08} rotation={[0.4, 0.2, 0]} />
-            <Satellite radius={1.6} speed={0.6} color="#f97316" size={0.06} rotation={[2, 1, 0]} reverse />
-            <Satellite radius={1.5} speed={0.7} color="#10b981" size={0.07} rotation={[1, 3, 0]} />
-        </group>
-    );
-}
-
-function Satellite({ radius, speed, color, size, rotation, reverse = false }: {
-    radius: number;
-    speed: number;
-    color: string;
-    size: number;
-    rotation: [number, number, number];
-    reverse?: boolean;
-}) {
     const groupRef = useRef<THREE.Group>(null);
+
+    // Create 3 distinct satellites with different orbits
+    // Using explicit geometries as "particles"
 
     useFrame((state, delta) => {
         if (groupRef.current) {
-            groupRef.current.rotation.y += delta * speed * (reverse ? -1 : 1);
+            // Rotate the entire satellite group slowly against the globe
+            groupRef.current.rotation.y -= delta * 0.2;
         }
     });
 
     return (
-        <group rotation={rotation}>
-            <group ref={groupRef}>
-                <mesh position={[radius, 0, 0]}>
-                    <sphereGeometry args={[size, 16, 16]} />
-                    <meshBasicMaterial color={color} transparent opacity={0.8} />
-                </mesh>
-            </group>
+        <group ref={groupRef}>
+            {/* Scaled satellite orbits up */}
+            <OrbitingSatellite radius={2.3} speed={1} color="#3b82f6" offset={0} tilt={[0.2, 0, 0.2]} />
+            {/* Satellite 2: Medium orbit, medium */}
+            <OrbitingSatellite radius={2.7} speed={0.7} color="#f97316" offset={2} tilt={[-0.2, 0, -0.2]} />
+            {/* Satellite 3: High orbit, slow */}
+            <OrbitingSatellite radius={3.1} speed={0.5} color="#22c55e" offset={4} tilt={[0.4, 0, 0]} />
+        </group>
+    );
+}
+
+function OrbitingSatellite({ radius, speed, color, offset, tilt }: any) {
+    const ref = useRef<THREE.Mesh>(null);
+
+    useFrame(({ clock }) => {
+        if (ref.current) {
+            const t = clock.getElapsedTime() * speed + offset;
+            ref.current.position.x = Math.cos(t) * radius;
+            ref.current.position.z = Math.sin(t) * radius;
+        }
+    });
+
+    return (
+        <group rotation={tilt}>
+            <mesh ref={ref}>
+                <sphereGeometry args={[0.04, 16, 16]} />
+                <meshBasicMaterial color={color} />
+            </mesh>
         </group>
     );
 }
@@ -96,4 +108,3 @@ function generateSpherePoints(count: number, radius: number) {
     }
     return points;
 }
-

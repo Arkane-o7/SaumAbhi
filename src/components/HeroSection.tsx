@@ -25,28 +25,28 @@ export function HeroSection() {
           >
             <div className="space-y-2">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
-                Your Business,
+                Innovating for
               </h1>
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight bg-gradient-to-r from-blue via-coral to-green bg-clip-text text-transparent">
-                Tech Ready.
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight bg-gradient-to-r from-blue via-coral to-green bg-clip-text text-transparent pb-4">
+                Everyday Life.
               </h1>
             </div>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
-              Start scaling your enterprise with cutting-edge IT solutions.
-              Implement cloud infrastructure, security, and digital transformation
-              in weeks instead of months.
+              SaumAbhi Info Tech builds intuitive software solutions to help consumers
+              navigate the digital world. Proud creators of <strong className="text-foreground">Navi</strong>,
+              the spotlight-style AI assistant for your desktop.
             </p>
 
             <div className="flex flex-wrap items-center gap-6 pt-2">
               <Button size="lg" className="rounded-full px-8 h-12 text-base">
-                Get started
+                Discover Navi
               </Button>
               <a
-                href="#contact"
+                href="#products"
                 className="inline-flex items-center gap-2 text-foreground font-medium hover:text-blue transition-colors group"
               >
-                Talk to an expert
+                Our Products
                 <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
@@ -73,7 +73,7 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative hidden lg:flex items-center justify-center h-[850px] w-full"
+            className="relative hidden lg:flex items-center justify-center h-[800px] w-[140%] -ml-[20%]"
           >
             <HeroGlobe />
           </motion.div>
