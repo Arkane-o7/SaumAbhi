@@ -1,108 +1,127 @@
 import { motion } from "framer-motion";
-import { ArrowRight, TrendingUp } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
 export function HeroSection() {
-  return <section className="relative overflow-hidden bg-background py-16 md:py-24">
-      <div className="container mx-auto px-4 border-8 border-gray-50">
+  return (
+    <section className="relative overflow-hidden bg-background min-h-[85vh] flex items-center">
+      {/* Floating dots decoration */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 right-1/3 w-2 h-2 rounded-full bg-blue/60" />
+        <div className="absolute top-1/2 right-1/4 w-1.5 h-1.5 rounded-full bg-coral/60" />
+        <div className="absolute bottom-1/3 right-1/2 w-2 h-2 rounded-full bg-green/60" />
+        <div className="absolute top-2/3 right-[45%] w-1 h-1 rounded-full bg-blue/80" />
+      </div>
+
+      <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <motion.div initial={{
-          opacity: 0,
-          y: 20
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.6
-        }} className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
-              Empathy-Driven
-              <br />
-              <span className="text-foreground">IT Solutions for</span>
-              <br />
-              <span className="text-foreground">Your Business</span>
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-lg">
-              Unlock the power of cutting-edge technology, cloud solutions, and
-              digital transformation to streamline operations and boost
-              productivity with expert implementation and support.
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-8"
+          >
+            <div className="space-y-2">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[1.1] tracking-tight">
+                Your Business,
+              </h1>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight bg-gradient-to-r from-blue via-coral to-green bg-clip-text text-transparent">
+                Tech Ready.
+              </h1>
+            </div>
+
+            <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
+              Start scaling your enterprise with cutting-edge IT solutions.
+              Implement cloud infrastructure, security, and digital transformation
+              in weeks instead of months.
             </p>
-            <div className="flex flex-wrap items-center gap-4 pt-4">
-              <Button size="lg" className="rounded-full px-8 gap-2">
-                Schedule Call
-                <ArrowRight className="h-4 w-4" />
+
+            <div className="flex flex-wrap items-center gap-6 pt-2">
+              <Button size="lg" className="rounded-full px-8 h-12 text-base">
+                Get started
               </Button>
-              <a href="#services" className="text-foreground font-medium underline underline-offset-4 hover:text-accent transition-colors">
-                Know More
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 text-foreground font-medium hover:text-blue transition-colors group"
+              >
+                Talk to an expert
+                <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
+
+            {/* Optional bottom banner */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="pt-8"
+            >
+              <a
+                href="#services"
+                className="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-border/50 hover:border-border hover:bg-muted/50 transition-all text-muted-foreground hover:text-foreground"
+              >
+                <span>Explore our enterprise solutions</span>
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </motion.div>
           </motion.div>
 
-          {/* Right Content - Stats Cards */}
-          <motion.div initial={{
-          opacity: 0,
-          x: 20
-        }} animate={{
-          opacity: 1,
-          x: 0
-        }} transition={{
-          duration: 0.6,
-          delay: 0.2
-        }} className="relative">
-            <div className="flex flex-col gap-4">
-              {/* Stats Row */}
-              <div className="flex gap-4">
-                {/* Stats Card */}
-                <div className="bg-coral-light rounded-3xl p-6 flex-1 relative overflow-hidden">
-                  <div className="relative z-10">
-                    <span className="text-5xl md:text-6xl font-bold text-coral">
-                      100+
-                    </span>
-                    <p className="text-sm text-foreground/80 mt-2 max-w-[150px]">
-                      Large companies we collaborate with place a great deal of
-                      trust in us.
-                    </p>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-coral/50 rounded-full mx-4 mb-4" />
-                </div>
+          {/* Right Content - Abstract 3D Illustration */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative hidden lg:flex items-center justify-center"
+          >
+            {/* Abstract geometric shapes */}
+            <div className="relative w-full h-[500px]">
+              {/* Main rotating shape group */}
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 flex items-center justify-center"
+              >
+                {/* Outer diamond */}
+                <div className="absolute w-72 h-72 border-[3px] border-blue/30 rounded-3xl rotate-45 bg-gradient-to-br from-blue/5 to-transparent" />
+                <div className="absolute w-64 h-64 border-[2px] border-coral/20 rounded-3xl rotate-[55deg] bg-gradient-to-br from-coral/5 to-transparent" />
+              </motion.div>
 
-                {/* Decorative Shape */}
-                <div className="relative w-40 h-40 hidden md:block">
-                  <div className="absolute top-0 right-0 w-16 h-16 bg-green rounded-full flex items-center justify-center">
-                    <TrendingUp className="h-6 w-6 text-primary-foreground" />
-                  </div>
-                  <div className="absolute bottom-0 right-0 w-32 h-32 bg-orange rounded-full" />
-                </div>
+              <motion.div
+                animate={{ rotate: -360 }}
+                transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 flex items-center justify-center"
+              >
+                {/* Inner shapes */}
+                <div className="absolute w-56 h-56 border-[3px] border-green/30 rounded-3xl rotate-[30deg] bg-gradient-to-tr from-green/5 to-transparent" />
+                <div className="absolute w-48 h-48 border-[2px] border-blue/40 rounded-3xl rotate-[70deg] bg-gradient-to-bl from-blue/10 to-transparent" />
+              </motion.div>
+
+              {/* Center glow */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-40 h-40 rounded-full bg-gradient-to-r from-blue/20 via-coral/20 to-green/20 blur-3xl" />
               </div>
 
-              {/* Growth Card */}
-              <div className="bg-blue rounded-3xl p-6 text-primary-foreground">
-                <div className="flex items-center gap-2 text-sm opacity-80 mb-2">
-                  <span className="w-8 h-0.5 bg-primary-foreground/50" />
-                  SaumAbhi Info Tech
-                </div>
-                <h3 className="text-2xl md:text-3xl font-bold leading-tight">
-                  Drive growth.
-                  <br />
-                  Boost impact.
-                  <br />
-                  Win with us.
-                </h3>
-                {/* Chart Bars */}
-                <div className="flex items-end gap-2 mt-4 h-20">
-                  {[40, 55, 70, 85, 95].map((height, i) => <motion.div key={i} initial={{
-                  height: 0
-                }} animate={{
-                  height: `${height}%`
-                }} transition={{
-                  duration: 0.5,
-                  delay: 0.5 + i * 0.1
-                }} className="flex-1 bg-primary-foreground/30 rounded-t-lg" />)}
-                </div>
-              </div>
+              {/* Floating elements */}
+              <motion.div
+                animate={{ y: [-10, 10, -10] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-20 right-20 w-6 h-6 rounded-lg bg-gradient-to-br from-coral to-orange rotate-45"
+              />
+              <motion.div
+                animate={{ y: [10, -10, 10] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute bottom-32 left-16 w-4 h-4 rounded-full bg-gradient-to-br from-blue to-green"
+              />
+              <motion.div
+                animate={{ y: [-5, 15, -5] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute top-1/2 right-10 w-3 h-3 rounded-full bg-gradient-to-br from-green to-blue"
+              />
             </div>
           </motion.div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 }
