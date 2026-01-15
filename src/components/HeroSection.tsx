@@ -1,19 +1,20 @@
 import { motion } from "framer-motion";
 import { ArrowRight, TrendingUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 export function HeroSection() {
-  return (
-    <section className="relative overflow-hidden bg-background py-16 md:py-24">
-      <div className="container mx-auto px-4">
+  return <section className="relative overflow-hidden bg-background py-16 md:py-24">
+      <div className="container mx-auto px-4 border-8 border-gray-50">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          y: 20
+        }} animate={{
+          opacity: 1,
+          y: 0
+        }} transition={{
+          duration: 0.6
+        }} className="space-y-6">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
               Empathy-Driven
               <br />
@@ -31,22 +32,23 @@ export function HeroSection() {
                 Schedule Call
                 <ArrowRight className="h-4 w-4" />
               </Button>
-              <a
-                href="#services"
-                className="text-foreground font-medium underline underline-offset-4 hover:text-accent transition-colors"
-              >
+              <a href="#services" className="text-foreground font-medium underline underline-offset-4 hover:text-accent transition-colors">
                 Know More
               </a>
             </div>
           </motion.div>
 
           {/* Right Content - Stats Cards */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative"
-          >
+          <motion.div initial={{
+          opacity: 0,
+          x: 20
+        }} animate={{
+          opacity: 1,
+          x: 0
+        }} transition={{
+          duration: 0.6,
+          delay: 0.2
+        }} className="relative">
             <div className="flex flex-col gap-4">
               {/* Stats Row */}
               <div className="flex gap-4">
@@ -88,21 +90,19 @@ export function HeroSection() {
                 </h3>
                 {/* Chart Bars */}
                 <div className="flex items-end gap-2 mt-4 h-20">
-                  {[40, 55, 70, 85, 95].map((height, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ height: 0 }}
-                      animate={{ height: `${height}%` }}
-                      transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
-                      className="flex-1 bg-primary-foreground/30 rounded-t-lg"
-                    />
-                  ))}
+                  {[40, 55, 70, 85, 95].map((height, i) => <motion.div key={i} initial={{
+                  height: 0
+                }} animate={{
+                  height: `${height}%`
+                }} transition={{
+                  duration: 0.5,
+                  delay: 0.5 + i * 0.1
+                }} className="flex-1 bg-primary-foreground/30 rounded-t-lg" />)}
                 </div>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
