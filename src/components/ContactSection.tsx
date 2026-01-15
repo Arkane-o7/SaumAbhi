@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -24,39 +24,7 @@ export function ContactSection() {
             </p>
 
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="h-12 w-12 rounded-full bg-blue/10 flex items-center justify-center flex-shrink-0">
-                  <Mail className="h-5 w-5 text-blue" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground">Email Us</h3>
-                  <p className="text-muted-foreground">
-                    contact@saumabhiinfotech.com
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="h-12 w-12 rounded-full bg-coral/10 flex items-center justify-center flex-shrink-0">
-                  <Phone className="h-5 w-5 text-coral" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground">Call Us</h3>
-                  <p className="text-muted-foreground">+91 98765 43210</p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="h-12 w-12 rounded-full bg-green/10 flex items-center justify-center flex-shrink-0">
-                  <MapPin className="h-5 w-5 text-green" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground">Visit Us</h3>
-                  <p className="text-muted-foreground">
-                    Tech Park, Bangalore, India
-                  </p>
-                </div>
-              </div>
+              {/* Contact details removed as per request */}
             </div>
           </motion.div>
 
