@@ -20,7 +20,7 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="SaumAbhi Info Tech" className="h-10 w-10" />
+            <img src={logo} alt="Saumabhi Infotech" className="h-10 w-10" />
             <span className="text-lg font-bold text-foreground">
               SaumAbhi Info Tech
             </span>
