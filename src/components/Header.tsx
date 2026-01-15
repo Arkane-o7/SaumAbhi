@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.png";
 
@@ -38,17 +38,6 @@ export function Header() {
               </a>
             ))}
           </nav>
-
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <a
-              href="#contact"
-              className="h-10 w-10 rounded-full bg-primary flex items-center justify-center hover:opacity-90 transition-opacity"
-              aria-label="Contact Us"
-            >
-              <Phone className="h-4 w-4 text-primary-foreground" />
-            </a>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
