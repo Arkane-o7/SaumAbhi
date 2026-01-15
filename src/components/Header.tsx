@@ -7,7 +7,7 @@ import logo from "@/assets/logo.png";
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About Us", href: "#about" },
-  { name: "Services", href: "#services" },
+  { name: "Products", href: "#products" },
   { name: "Contact Us", href: "#contact" },
 ];
 
@@ -20,9 +20,9 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Saumabhi Infotech" className="h-10 w-10" />
+            <img src={logo} alt="SaumAbhi Info Tech" className="h-10 w-10" />
             <span className="text-lg font-bold text-foreground">
-              SaumAbhi Info Tech
+              Saumabhi Infotech
             </span>
           </Link>
 
@@ -41,12 +41,13 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="outline" className="rounded-full">
-              Get Started
-            </Button>
-            <div className="h-10 w-10 rounded-full bg-primary flex items-center justify-center">
+            <a
+              href="#contact"
+              className="h-10 w-10 rounded-full bg-primary flex items-center justify-center hover:opacity-90 transition-opacity"
+              aria-label="Contact Us"
+            >
               <Phone className="h-4 w-4 text-primary-foreground" />
-            </div>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -76,7 +77,6 @@ export function Header() {
                   {link.name}
                 </a>
               ))}
-              <Button className="mt-2 rounded-full">Get Started</Button>
             </nav>
           </div>
         )}
