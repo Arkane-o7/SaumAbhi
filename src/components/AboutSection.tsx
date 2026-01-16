@@ -65,7 +65,7 @@ export function AboutSection() {
               modern digital age.
             </h2>
             <p className="text-muted-foreground mb-8">
-              At SaumAbhi Info Tech, we believe software should be an extension of your thought process.
+              At Saumabhi Infotech, we believe software should be an extension of your thought process.
               We are dedicated to building robust, cross-platform applications that solve real-world problems.
               Our flagship product, <strong>Navi</strong>, redefines how you interact with AI on your computer.
             </p>

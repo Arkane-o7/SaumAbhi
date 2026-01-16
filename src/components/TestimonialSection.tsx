@@ -43,7 +43,7 @@ export function TestimonialSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            The SaumAbhi Standard.
+            The Saumabhi Standard.
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Our philosophy drives everything we create. We are dedicated to building a digital future that is human-centric, private, and beautiful.

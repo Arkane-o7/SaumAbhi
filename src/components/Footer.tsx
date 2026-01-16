@@ -40,10 +40,10 @@ export function Footer() {
             <Link to="/" className="flex items-center gap-3 mb-4">
               <img
                 src={logo}
-                alt="SaumAbhi Info Tech"
+                alt="Saumabhi Infotech"
                 className="h-10 w-10 brightness-0 invert"
               />
-              <span className="text-lg font-bold">SaumAbhi Info Tech</span>
+              <span className="text-lg font-bold">Saumabhi Infotech</span>
             </Link>
             <p className="text-primary-foreground/70 max-w-xs mb-6">
               Empowering businesses with innovative technology solutions that
@@ -114,7 +114,7 @@ export function Footer() {
 
         <div className="border-t border-primary-foreground/10 pt-8 text-center text-primary-foreground/60">
           <p>
-            © {new Date().getFullYear()} SaumAbhi Info Tech. All rights
+            © {new Date().getFullYear()} Saumabhi Infotech. All rights
             reserved.
           </p>
         </div>

@@ -33,7 +33,7 @@ export function HeroSection() {
             </div>
 
             <p className="text-lg md:text-xl text-muted-foreground max-w-lg leading-relaxed">
-              SaumAbhi Info Tech builds intuitive software solutions to help consumers
+              Saumabhi Infotech builds intuitive software solutions to help consumers
               navigate the digital world. Proud creators of <strong className="text-foreground">Navi</strong>,
               the spotlight-style AI assistant for your desktop.
             </p>
